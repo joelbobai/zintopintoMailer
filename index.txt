@@ -1,0 +1,153 @@
+const express = require("express");
+// const fetch = require("node-fetch");
+//const client = require("twilio");
+// const { Vonage } = require("@vonage/server-sdk");
+const app = express();
+
+var nodemailer = require("nodemailer");
+var smtpTransport = require("nodemailer-smtp-transport");
+
+var transporter = nodemailer.createTransport(
+  smtpTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    auth: {
+      user: "dubaigreenproperties@gmail.com",
+      pass: "hxpterxkqsjjznkr",
+    },
+  })
+);
+// joelbobai43@gmail.com ikennaphil1@gmali.com
+var mailOptions = {
+  from: "info@dubaigreenproperties.com",
+  to: "ikennaphil1@gmail.com",
+  subject: "Sending Email using Node.js[nodemailer]",
+  text: "E no easy!",
+};
+
+transporter.sendMail(mailOptions, function (error, info) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Email sent: " + info.response);
+  }
+});
+
+// var sendpulse = require("sendpulse-api");
+// /*
+//  * https://login.sendpulse.com/settings/#api
+//  */
+// let API_USER_ID = "28bb0ab43a48341fa0d3935ac201b9c8";
+// let API_SECRET = "db08998724b85b820f11a25e9f871706";
+// let TOKEN_STORAGE = "/tmp/";
+// const request = require("request");
+
+// sendpulse.init(API_USER_ID, API_SECRET, TOKEN_STORAGE, function () {
+//   sendpulse.listAddressBooks(console.log);
+// });
+
+// var answerGetter = function (data) {
+//   console.log(data);
+// };
+
+// sendpulse.smsSend(answerGetter, "test", ["+2348027663942"], "test sms");
+
+// Find your Service Plan ID and API Token at dashboard.sinch.com/sms/api/rest
+// Find your Sinch numbers at dashboard.sinch.com/numbers/your-numbers/numbers
+// const SERVICE_PLAN_ID = "f1b9f8c64a75449aa9c76b631793b11f";
+// const API_TOKEN = "a01db9ea9c61427d871a1b8a933ffc48";
+// const SINCH_NUMBER = "+447520651793";
+// const TO_NUMBER = "+2348027663942";
+
+// async function run() {
+//   const resp = await fetch(
+//     "https://us.sms.api.sinch.com/xms/v1/" + SERVICE_PLAN_ID + "/batches",
+//     {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: "Bearer " + API_TOKEN,
+//       },
+//       body: JSON.stringify({
+//         from: SINCH_NUMBER,
+//         to: [TO_NUMBER],
+//         body: "Programmers are tools for converting caffeine into code. We just got a new shipment of mugs! Check them out: https://tinyurl.com/4a6fxce7!",
+//       }),
+//     }
+//   );
+
+//   const data = await resp.json();
+//   console.log(data);
+// }
+
+// run();
+
+// const options = {
+//   method: "POST",
+//   url: "https://api.sendchamp.com/api/v1/sms/send",
+//   headers: {
+//     Accept: "application/json,text/plain,*/*",
+//     "Content-Type": "application/json",
+//     Authorization:
+//       "Bearer sendchamp_live_$2a$10$wXfyL2wUSwB4Iz9f9Bw0xOMkJubiUlfA54tuADUlBmhyW.IeYg3i.",
+
+//   },
+//   form: {
+//     to: "2348027663942",
+//     message: "bobai bobai",
+//     sender_name: "Sendchamp",
+//     route: "dnd",
+//   },
+// };
+
+// request(options, function (error, response, body) {
+//   if (error) throw new Error(error);
+
+//   console.log(body);
+// });
+
+// const vonage = new Vonage({
+//   apiKey: "b31be8dd",
+//   apiSecret: "vXwQkaF7jyQwnZKN",
+// });
+
+// const from = "DUBAL GREEN";
+// const to = "2349028002258";
+// const text = "A text message sent using the Vonage SMS API";
+
+// const sendM = async () => {
+//   try {
+//     await vonage.sms.send({ to, from, text }).then((resp) => {
+//       console.log("Message sent successfully");
+//       console.log(resp);
+//     });
+//   } catch (err) {
+//     console.log("There was an error sending the messages.");
+//     console.error(err);
+//   }
+// };
+
+// sendM();
+
+const accountSid = "AC239e8a36fbc967d8f13436d9fa26ad8a";
+const authToken = "2a9fe2c99757fe4f3e520ed92981fb17";
+
+// const sendM = async () => {
+//   try {
+//     const clients = new client(accountSid, authToken);
+//     await clients.messages
+//       .create({
+//         body: "H",
+//         from: "+13204411511",
+//         to: "+2348027663942",
+//       })
+//       .then((res) => console.log(res, "SMS sent"));
+//   } catch (err) {
+//     console.log("There was an error sending the messages.");
+//     console.error(err);
+//   }
+// };
+
+// sendM();
+
+app.listen(5000, () => console.log("work"));

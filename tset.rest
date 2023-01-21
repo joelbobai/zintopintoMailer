@@ -1,0 +1,14 @@
+POST http://localhost:3001/sendmail
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImhleSIsImlhdCI6MTY3NDI2ODY1Nn0.jgTff5dLSCt20fSQeuxWiTYy5SCQcYoous3wUZip-Zg
+
+{
+  "sendFrom": "info@dubaigreenproperties.com",
+  "sendTo": "joelbobai43@gmail.com",
+  "sendSubject": "DUBAI GREEN",
+  "sendHtml": "dnd"
+}
+
+###
+POST http://node.sfsnigeria.com.ng/info/info@dubaigreenproperties.com/joelbobai43@gmail.com/hey/work
+Content-Type: application/json

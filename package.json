@@ -1,0 +1,31 @@
+{
+  "name": "sms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vonage/server-sdk": "^3.0.18",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.0",
+    "nexmo-client": "^9.2.0",
+    "node-fetch": "^3.3.0",
+    "nodemailer": "^6.9.0",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^2.0.20",
+    "request": "^2.88.2",
+    "sendpulse-api": "^1.1.6",
+    "twilio": "^3.84.1"
+  }
+}
