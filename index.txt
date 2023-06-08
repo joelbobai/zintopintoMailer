@@ -151,3 +151,9 @@ const authToken = "2a9fe2c99757fe4f3e520ed92981fb17";
 // sendM();
 
 app.listen(5000, () => console.log("work"));
+
+
+
+
+//  http://localhost:3000/sendmail/info@dubaigreenproperties.com/joelbobai43@gmail.com/hey/name
+"/sendmail/:sendFrom/:sendTo/:sendSubject/:sendHtml"
