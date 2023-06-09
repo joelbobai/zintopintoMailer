@@ -159,11 +159,12 @@ app.post("/zintopinto/sendmail", async (req, res) => {
           error: error,
         });
       } else {
+        res.redirect('https://www.zintopinto.com/demo2/success.php');
         //   console.log("Email sent: " + info.response);
-        res.status(200).json({
-          status: "Email sent",
-          message: info.response,
-        });
+//         res.status(200).json({
+//           status: "Email sent",
+//           message: info.response,
+//         });
       }
     });
   } catch (error) {
